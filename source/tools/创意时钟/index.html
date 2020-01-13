@@ -1,0 +1,125 @@
+﻿---
+layout: false
+---
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>创意时钟</title>
+<style>
+button {
+	color: black;
+	background: transparent;
+	outline: 1px solid black;
+	border: 0px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+a {
+	color: white;
+    text-decoration: none;
+}
+html,
+body {
+  background-color: #1f1f1f;
+  margin: 0;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+}
+
+#clock {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -175px;
+  margin-top: -175px;
+}
+
+.digit-group {
+  display: inline-block;
+  height: 350px;
+}
+.digit-group:not(:last-child):after {
+  content: ':';
+  font-size: 72px;
+}
+
+.digit {
+  display: inline-block;
+  width: 50px;
+}
+.digit div {
+  color: rgba(255, 255, 255, 0.1);
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: font-size 250ms, -webkit-transform 500ms;
+  transition: font-size 250ms, -webkit-transform 500ms;
+  transition: font-size 250ms, transform 500ms;
+  transition: font-size 250ms, transform 500ms, -webkit-transform 500ms;
+}
+.digit div.highlight {
+  color: inherit;
+  font-size: 72px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+</style>
+</head>
+<body>
+<div></div>
+
+<script>
+let _timeElement10Digits = Array.from(Array(10)).map((n, i) => i);
+let _timeElement6Digits = _timeElement10Digits.slice(0, 6);
+let _timeElement3Digits = _timeElement10Digits.slice(0, 3);
+let _timeElementStructure = [
+	[_timeElement3Digits, _timeElement10Digits],
+	[_timeElement6Digits, _timeElement10Digits],
+	[_timeElement6Digits, _timeElement10Digits]
+];
+
+let clock = document.createElement("div");
+clock.id = "clock";
+document.body.appendChild(clock);
+let digitGroups = [];
+
+_timeElementStructure.forEach(digits => {
+	let digitGroup = document.createElement("div");
+	digitGroup.classList.add("digit-group");
+	clock.appendChild(digitGroup);
+	digitGroups.push(digitGroup);
+	digits.forEach(digitList => {
+		let digit = document.createElement("div");
+		digit.classList.add("digit");
+		digitList.forEach(n => {
+			let ele = document.createElement("div");
+			ele.innerText = n;
+			digit.appendChild(ele);
+		});
+		digitGroup.appendChild(digit);
+	});
+});
+
+function update() {
+	requestAnimationFrame(update);
+	let date = new Date();
+	let time = [date.getHours(), date.getMinutes(), date.getSeconds()]
+	.map(n => `0${n}`.slice(-2).split("").map(e => +e))
+	.reduce((p, n) => p.concat(n), []);
+	time.forEach((n, i) => {
+		let digit = digitGroups[Math.floor(i * 0.5)].children[i % 2].children;
+		Array.from(digit).forEach(n => n.classList.remove("highlight"));
+		digit[n].classList.add("highlight");
+	});
+}
+requestAnimationFrame(update);
+</script>
+
+</body>
+<button style="margin-top: 550px;"><a href="https://dsanying.github.io">首页</a></button>
+<button style="margin-top: 550px;"><a href="https://dsanying.github.io/tools">工具箱</a></button>    
+</html>

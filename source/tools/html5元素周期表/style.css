@@ -1,0 +1,20 @@
+body {
+	background: url('../images/background.jpg') 50% -100px fixed no-repeat #1c1d26;
+	font-family: Tahoma, Verdana, Arial, Sans-serif;
+}
+h1, h2, h3, h4, h5, h6, body {
+	color: white;
+}
+#content{
+	width: 950px;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.star{
+	margin-bottom:40px;
+}
+a{
+	color:black;
+	text-decoration: underline;
+}

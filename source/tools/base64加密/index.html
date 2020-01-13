@@ -1,0 +1,160 @@
+---
+title: base64加密
+---
+
+<script src="https://cdn.jsdelivr.net/npm/crypto-js@3.1.9-1/core.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/crypto-js@3.1.9-1/enc-base64.js"></script>
+<style>
+p {
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+textarea.input {
+  position: relative;
+  left: 0%;
+  top: 0%;
+  margin: 0%;
+  height: 210px;
+  width: 720px;
+}
+textarea.output {
+  position: relative;
+  left: 0%;
+  top: auto;
+  margin: 0%;
+  height: 210px;
+  width: 720px;
+}
+.btn {
+  background: #fff;
+  border: 2px solid #555;
+  border-radius: 2px;
+  color: #555;
+  display: inline-block;
+  font-size: 0.875em;
+  line-height: 2;
+  padding: 0 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition-property: background-color;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+.btn:hover {
+  background: #fff;
+  border-color: #555;
+  color: #555;
+}
+</style>
+<p><textarea rows="3" cols="20" class="input" id="input" placeholder="请输入你要加密的明文或要解密的密文" style="resize: none;"></textarea></p>
+<div>
+<button class="btn" onclick="javascript:enc()">单层加密</button>
+<button class="btn" onclick="javascript:moreenc()">多层加密</button>
+<button class="btn" onclick="javascript:dec()">单层解密</button>
+<button class="btn" onclick="javascript:moredec()">多层解密</button>
+<button id="copybutton" class="btn" data-clipboard-target="#output">复制结果</button>
+</div>
+<textarea rows="3" cols="20" class="output" id="output" placeholder="结果" style="resize: none;"></textarea>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+var none = "未读取到文段!";
+var check =/^\+?[1-9][0-9]*$/;
+function enc() {
+  var text=document.getElementById("input").value;
+  if(text==""){
+    document.getElementById("output").value=none;
+    return;
+  }
+  var str=CryptoJS.enc.Utf8.parse(text);
+  document.getElementById("output").value=CryptoJS.enc.Base64.stringify(str);
+}
+function moreenc() {
+  var text=document.getElementById("input").value;
+  if(text==""){
+    document.getElementById("output").value=none;
+    return;
+  }
+  var str=CryptoJS.enc.Utf8.parse(text);
+  var enctimes=window.prompt("请输入加密层数");
+  if(enctimes){
+    if(check.test(enctimes)){
+      document.getElementById("middle").value=document.getElementById("input").value;
+      do{
+        text=document.getElementById("middle").value;
+        str=CryptoJS.enc.Utf8.parse(text);
+        document.getElementById("middle").value=CryptoJS.enc.Base64.stringify(str);
+        enctimes--;
+      }while(enctimes>0)
+      document.getElementById("output").value=document.getElementById("middle").value;
+    }else{
+      alert("请输入正整数!")
+      moreenc();
+    }
+  }else if(enctimes===""){
+    alert("请输入!")
+    moreenc();
+  }
+}
+function dec() {
+  var code=document.getElementById("input").value;
+  if(code==""){
+    document.getElementById("output").value=none;
+    return;
+  }
+  var words = CryptoJS.enc.Base64.parse(code);
+  document.getElementById("output").value=words.toString(CryptoJS.enc.Utf8);
+}
+function moredec() {
+  var code=document.getElementById("input").value;
+  if(code==""){
+    document.getElementById("output").value=none;
+    return;
+  }
+  var words = CryptoJS.enc.Base64.parse(code);
+  var dectimes=window.prompt("请输入解密层数(解密至最底层请输入-1)");
+  if(dectimes){
+    if(dectimes=="-1"){
+      document.getElementById("middle").value=document.getElementById("input").value;
+      while(1){
+        code=document.getElementById("middle").value;
+        words = CryptoJS.enc.Base64.parse(code);
+        document.getElementById("middle").value=words.toString(CryptoJS.enc.Utf8);
+        if(document.getElementById("middle").value==""){
+          document.getElementById("output").value=code;
+          return;
+        }
+      }
+    }
+    if(check.test(dectimes)){
+      document.getElementById("middle").value=document.getElementById("input").value;
+      do{
+        code=document.getElementById("middle").value;
+        words = CryptoJS.enc.Base64.parse(code);
+        document.getElementById("middle").value=words.toString(CryptoJS.enc.Utf8);
+        if(document.getElementById("middle").value==""){
+          alert("解密层数超过加密层数，已自动解密至最底层!")
+          document.getElementById("output").value=code;
+          return;
+        }
+        dectimes--;
+      }while(dectimes>0)
+      document.getElementById("output").value=document.getElementById("middle").value;
+    }
+  }else if(dectimes===""){
+    alert("请输入!")
+    moredec();
+  }
+}
+var result=document.getElementById("output").value;
+var clipboard = new ClipboardJS('.btn');
+clipboard.on('success', function(e) {
+  alert("复制成功!");
+  e.clearSelection();
+});
+clipboard.on('error', function(e) {
+  alert("复制失败!");
+  e.clearSelection();
+});
+</script>
+<textarea id="middle" style="visibility:hidden;"></textarea>

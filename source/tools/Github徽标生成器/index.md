@@ -1,0 +1,43 @@
+---
+title: Github徽标生成器
+---
+
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<script>
+	function make(){
+       if(document.getElementById("color").value!=""){ document.getElementById("url").value='https://img.shields.io/badge/'+document.getElementById("lable").value+'-'+document.getElementById("message").value+'-'+document.getElementById("color").value;
+document.getElementById("picture").src=document.getElementById("url").value;         document.getElementById("url").value='URL:'+document.getElementById("url").value;
+       }else{
+           alert('Please choose the color!');
+       }
+	}
+	</script>
+<form >
+Lable:<input type="text" id="lable" placeholder="Lable" autocomplete="off"><br>
+Message:<input type="text" id="message" placeholder="Message" autocomplete="off"><br>
+Color:<input list="default-colors" id="color" placeholder="Color" autocomplete="off"><br><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Hex code is supported!Don't need to type'#'!<br>
+<datalist id="default-colors">
+	<option value="brightgreen"></option>
+	<option value="green"></option>
+	<option value="yellowgreen"></option>
+	<option value="yellow"></option>
+	<option value="orange"></option>
+	<option value="red"></option>
+	<option value="lightgrey"></option>
+	<option value="blue"></option>
+    <option value="blueviolet"></option>
+	<option value="success"></option>
+	<option value="important"></option>
+	<option value="critical"></option>
+	<option value="informational"></option>
+	<option value="inactive"></option>
+	</datalist>
+<output type=text id="url">URL:</output><br>
+IMG:<img id="picture">
+<button type="button" onclick="make()">Make Badge</button>
+</form>
+</body>
+</html>
