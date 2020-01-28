@@ -4,7 +4,7 @@
 
 # Site
 title: 暗影博客
-subtitle: 天上天下，唯朕独尊
+subtitle: <span id="subtitle"> </span>
 description: 
 keywords:
 author: 暗影
