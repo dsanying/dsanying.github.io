@@ -15,8 +15,7 @@ menu:
   sitemap: 站点地图
   commonweal: 公益 404
   tools: 工具箱
-  links: 友链
-  comments: 留言板
+  links: 友链|留言
 sidebar:
   overview: 站点概览
   toc: 文章目录
