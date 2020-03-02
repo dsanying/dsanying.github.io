@@ -1,4 +1,4 @@
-  .link-card {
+  .link-grid {
     display: grid;
     grid-gap: 1.5rem 1.5rem;
     grid-template-columns: 1fr 1fr;
@@ -9,11 +9,11 @@
             user-select: none;
   }
   @media (max-width: 767px) {
-     .link-card {
+     .link-grid {
       grid-template-columns: 1fr;
     }
   }
-   .link-card div {
+   .link-grid div {
     border: solid #ddd;
     box-shadow: 1rem 1rem 0.5rem #808080;
     height: 5rem;
@@ -21,16 +21,16 @@
     padding: 0.5rem;
     position: relative;
   }
-   .link-card div:hover {
+   .link-grid div:hover {
     -webkit-animation: shake 0.5s;
             animation: shake 0.5s;
     background: rgba(230,244,250,0.5);
   }
-   .link-card div:active {
+   .link-grid div:active {
     box-shadow: 0.5rem 0.5rem 0.25rem #808080;
     transform: translate(0.2rem, 0.2rem);
   }
-   .link-card div img {
+   .link-grid div img {
     border-radius: 50%;
     height: 5rem;
     left: 0.5rem;
@@ -38,7 +38,7 @@
     top: 0.5rem;
     width: 5rem;
   }
-   .link-card div i {
+   .link-grid div i {
     border-radius: 50%;
     height: 5rem;
     left: 0.85rem;
@@ -46,7 +46,7 @@
     top: 0.5rem;
     width: 5rem;
   }
-   .link-card .square i{
+   .link-grid .square i{
     border-radius: 50%;
     height: 5rem;
     left: 0.85rem;
@@ -54,18 +54,18 @@
     top: 1.2rem;
     width: 5rem;
   }
-   .link-card div p {
+   .link-grid div p {
     margin: 0 1rem 0 6rem;
   }
-   .link-card div p:first-of-type {
+   .link-grid div p:first-of-type {
     font-size: 1.2em;
   }
-   .link-card div p:last-of-type {
+   .link-grid div p:last-of-type {
     font-size: 0.8em;
     line-height: 1.3rem;
     opacity: 0.9;
   }
-   .link-card div a {
+   .link-grid div a {
     border: none;
     height: 100%;
     left: 0;

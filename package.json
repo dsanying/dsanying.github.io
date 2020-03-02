@@ -9,12 +9,12 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "4.1.1"
+    "version": "4.2.0"
   },
   "dependencies": {
-    "hexo": "^4.0.0",
+    "hexo": "^4.2.0",
     "hexo-baidu-url-submit": "0.0.6",
-    "hexo-blog-encrypt": "^3.0.9",
+    "hexo-blog-encrypt": "^3.0.12",
     "hexo-deployer-git": "^2.1.0",
     "hexo-filter-mermaid-diagrams": "^1.0.5",
     "hexo-generator-archive": "^1.0.0",

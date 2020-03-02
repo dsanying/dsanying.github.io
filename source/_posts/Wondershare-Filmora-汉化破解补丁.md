@@ -1,7 +1,6 @@
 ---
 title: Wondershare Filmora 汉化破解补丁
-categories: Course
-tags: Wondershare Filmora
+categories: Software
 ---
 ### 软件官网
 
