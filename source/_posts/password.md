@@ -4,7 +4,7 @@ categories:
   - null
 tags:
   - encrypt
-sage: true
+hidden: true
 ---
 
 [深圳实验](szsy.cn)：

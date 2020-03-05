@@ -19,7 +19,7 @@
             {%- if itemName == 'default' %}
               {%- set parentValue = subvalue.split('||')[0] | trim %}
             {% else %}
-              {%- if subvalue.indexOf('http') == 0 %}
+              {%- if subvalue.startsWith('http') %}
                 {%- set respath = subvalue %}
               {% else %}
                 {%- set respath = parentValue + subvalue %}
@@ -65,7 +65,7 @@
                       {%- if itemName == 'default' %}
                         {%- set parentSubValue = subvalue2.split('||')[0] | trim %}
                       {% else %}
-                        {%- if subvalue2.indexOf('http') == 0 %}
+                        {%- if subvalue2.startsWith('http') %}
                           {%- set respath2 = subvalue2 %}
                         {% else %}
                           {%- set respath2 = parentValue + parentSubValue + subvalue2 %}
@@ -94,5 +94,3 @@
   {%- endfor %}
   {# End Submenu & Submenu-2 #}
 {%- endif %}
-
-<iframe src="https://www.lovestu.com/api/project/cnmapyinqing/obj.php" height="500" frameborder="no" border="0" width="100%"> </iframe>

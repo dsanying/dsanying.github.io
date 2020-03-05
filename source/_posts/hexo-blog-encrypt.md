@@ -40,8 +40,6 @@ password: unencrypt
 ---
 ```
 
-[Demo演示](./example)(密码为unencrypt)
-
 ### 高级设置
 
 #### 优先级

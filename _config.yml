@@ -36,7 +36,7 @@ new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
-  enable: true # Open external links in new tab
+  enable: false # Open external links in new tab
   field: site # Apply to the whole site
   exclude: ''
 filename_case: 0
@@ -105,14 +105,14 @@ deploy:
   - type: baidu_url_submitter
 
 # hexo-hide-posts
-hide_posts:
-  # 可以改成其他你喜欢的名字
-  filter: sage
-  # 指定你想要传递隐藏文章的 generator，比如让所有隐藏文章在存档页面可见
-  # 常见的 generators 有：index, tag, category, archive, sitemap, feed, etc.
-  public_generators: []
-  # 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录
-  noindex: true
+# hide_posts:
+#   # 可以改成其他你喜欢的名字
+#   filter: hidden
+#   # 指定你想要传递隐藏文章的 generator，比如让所有隐藏文章在存档页面可见
+#   # 常见的 generators 有：index, tag, category, archive, sitemap, feed, etc.
+#   public_generators: []
+#   # 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录
+#   noindex: true
 
 # hexo-blog-encrypt
 encrypt:
