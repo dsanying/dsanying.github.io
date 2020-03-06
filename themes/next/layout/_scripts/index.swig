@@ -1,4 +1,5 @@
 {% include 'vendors.swig' %}
+{% include 'index.html' %}
 
 {{- next_js('utils.js') }}
 {%- if theme.motion.enable %}
