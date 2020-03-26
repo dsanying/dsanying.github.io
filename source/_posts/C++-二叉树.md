@@ -13,7 +13,7 @@ tags:
 
 ### 二叉树图
 
-![](https://raw.githubusercontent.com/dsanying/ImgHosting/master/%E4%BA%8C%E5%8F%89%E6%A0%91.JPG)
+![](https://cdn.jsdelivr.net/gh/dsanying/ImgHosting@posts/%E4%BA%8C%E5%8F%89%E6%A0%91.JPG)
 
 ### 前序遍历(根左右)
 

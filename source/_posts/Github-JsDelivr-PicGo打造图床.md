@@ -6,7 +6,7 @@ tags:
   - HEXO
 ---
 
-![](https://cdn.jsdelivr.net/gh/dsanying/ImgHosting/Github.JsDeliver+Picgo.jpg)
+![](https://cdn.jsdelivr.net/gh/dsanying/ImgHosting@posts/Github+JsDeliver+Picgo.jpg)
 
 <!--more-->
 

@@ -18,4 +18,4 @@ categories: Software
 - 破解后本地使用VIP资源(去水印等)皆免费，网络下载素材仍需付费
 
 ### 下载
-[直链下载](https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly91YmVzdC1teS5zaGFyZXBvaW50LmNvbS86dTovZy9wZXJzb25hbC9hbl95aW5nX29uZWRyaXZlX3JlYWRtYWlsX25ldC9FY2NLVXVPbkhMSkdnWTVXMk5PVWdrUUI5bVhLOXQ1X1BZUkppTDhYY1BYcy1BP2U9STZmMEph.exe)
+[直链下载](https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly91YmVzdC1teS5zaGFyZXBvaW50LmNvbS86dTovZy9wZXJzb25hbC9hbl95aW5nX29uZWRyaXZlX3JlYWRtYWlsX25ldC9FY2NLVXVPbkhMSkdnWTVXMk5PVWdrUUJEMXBKR1V5Z01mXzRTelFWUWtCRmtnP2U9bDhGNUo2.exe)
