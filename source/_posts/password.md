@@ -26,6 +26,12 @@ Password：anbu-jy123
 
 ---
 
+#### [Fast.io](https://fast.io/)
+Account：119548583@qq.com
+Password：dsanying123
+
+---
+
 #### [石墨文档](https://shimo.im/welcome)
 Account：119548583@qq.com
 Password：dsanying123
@@ -51,15 +57,12 @@ Password: anying123
 ---
 
 #### [Microsoft Office](https://www.office.com/?auth=2)
-##### 个人:
+##### 个人版:
      Account: 119548583@qq.com
      Password: anbujy123
-##### 暗影:
-     Account: an_ying@onedrive.readmail.net
-     Password: An-ying123
-##### 郑博文:
-     Account: anying@onedrive.readmail.net
-     Password: An-ying123
+##### 教育版:
+     Account: dsanying@xkx.me
+     Password: Ds-anying123
 
 ---
 

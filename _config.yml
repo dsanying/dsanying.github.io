@@ -4,7 +4,7 @@
 
 # Site
 title: 暗影博客
-subtitle: <span id="subtitle"></span><span id="typed-cursor"></span>
+subtitle: 暗影无际，暗夜无边
 description: 
 keywords:
 author: 暗影
@@ -59,7 +59,7 @@ highlight:
 index_generator:
   path: ''
   per_page: 10
-  order_by: -updated
+  order_by: -created
 
 # Category & Tag
 default_category: uncategorized

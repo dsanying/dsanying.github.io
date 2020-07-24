@@ -3,9 +3,7 @@
 }
 
 .post-body .tabs, .tabs-comment {
-  display: block;
   padding-top: 10px;
-  position: relative;
 
   ul.nav-tabs {
     display: flex;
@@ -20,7 +18,7 @@
     }
 
     li.tab {
-      border-bottom: 1px solid $gray-lighter;
+      border-bottom: 1px solid $grey-lighter;
       border-left: 1px solid transparent;
       border-right: 1px solid transparent;
       border-top: 3px solid transparent;
@@ -41,7 +39,7 @@
       }
 
       if (hexo-config('tabs.transition.tabs')) {
-        the-transition-ease-out();
+        transition: all $transition-ease-out;
       }
 
       a {
@@ -57,7 +55,7 @@
         }
 
         if (hexo-config('tabs.transition.labels')) {
-          the-transition-ease-out();
+          transition: all $transition-ease-out;
         }
       }
 

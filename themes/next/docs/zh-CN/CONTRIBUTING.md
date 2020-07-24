@@ -5,9 +5,11 @@
   <a title="俄语" href="../ru/CONTRIBUTING.md">:ru:</a>
 </div>
 
-# <div align="center"><a title="Go to homepage" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
+<a title="NexT website" href="https://theme-next.js.org"><img align="right" alt="NexT logo" width="100" height="100" src="https://raw.githubusercontent.com/next-theme/hexo-theme-next/master/source/images/logo.svg"></a>
 
-首先，非常感谢大家抽出宝贵时间来让我们的 NexT 主题越变越好。在这里，我们介绍一下 [NexT 主题及其子模块](https://github.com/theme-next) 的开源贡献指南。不过，我们希望大家不要局限于此，更欢迎大家随时进行补充。
+# NexT
+
+首先，非常感谢大家抽出宝贵时间来让我们的 NexT 主题越变越好。在这里，我们介绍一下 [NexT 主题及其子模块](https://github.com/next-theme) 的开源贡献指南。不过，我们希望大家不要局限于此，更欢迎大家随时进行补充。
 
 ## 目录
 
@@ -35,24 +37,15 @@
 
 #### 阅读文档
 
-如果你在使用过程中遇到了问题，你可以查阅 [FAQs](https://theme-next.org/docs/faqs) 或者 [NexT 帮助文档](https://theme-next.org/docs/troubleshooting)。
+如果你在使用过程中遇到了问题，你可以查阅 [FAQs](https://theme-next.js.org/docs/faqs) 或者 [NexT 帮助文档](https://theme-next.js.org/docs/troubleshooting)。
 
-另外，你也可以通过 [这里](https://github.com/theme-next/hexo-theme-next/search?q=&type=Issues&utf8=%E2%9C%93) 进行大致检索，有些问题已经得到解答，你可以自行解决。对于没有解决的 Issue，你也可以继续提问。
+另外，你也可以通过 [这里](https://github.com/next-theme/hexo-theme-next/search?q=&type=Issues&utf8=%E2%9C%93) 进行大致检索，有些问题已经得到解答，你可以自行解决。对于没有解决的 Issue，你也可以继续提问。
 
 #### 快速调试指南
 
-在 GitHub 上提交 Issue 前，请先通过以下方法 debug：
+在 GitHub 上提交 Issue 前，请先查看我们的 [快速调试指南](https://theme-next.js.org/docs/troubleshooting.html#Quick-Debug-Instructions) 来 debug。
 
-* 执行`hexo clean`，清除浏览器缓存，并禁用 CDN 服务（例如 Cloudflare Rocket Loader）；
-* 切换到其它主题并检查 bug 是否仍然存在（例如使用默认主题 landscape）。换言之，证明这是 NexT 主题而非来自 Hexo 的 bug；
-* 将 NexT 主题升级到最新版；
-* 将 Hexo 和 Hexo 插件升级到最新版；
-* 将 Node.js 和 `npm` 升级到最新版；
-* 卸载不必要的 Hexo 插件，或重新通过 `npm install --save` 安装插件。
-
-如果你得到了来自 Hexo 或浏览器控制台的报错信息，请在 Google / Stackoverflow / GitHub Issue 中搜寻，或在提交 Issue 时报告给我们。
-
-如果你在使用过程中发现了 Bug，请再次确认 Bug 在 [最新发布版本](https://github.com/theme-next/hexo-theme-next/releases/latest) 中是否重现。如果 Bug 重现，欢迎你到我们的 [主题仓库](https://github.com/theme-next/hexo-theme-next) 中 [反馈 Bug](#reporting-bugs) 或者 [提交功能需求](#提交功能需求)，也更期待您 [提交合并请求](#提交合并请求)。
+如果你在使用过程中发现了 Bug，请再次确认 Bug 在 [最新发布版本](https://github.com/next-theme/hexo-theme-next/releases/latest) 中是否重现。如果 Bug 重现，欢迎你到我们的 [主题仓库](https://github.com/next-theme/hexo-theme-next) 中 [反馈 Bug](#reporting-bugs) 或者 [提交功能需求](#提交功能需求)，也更期待您 [提交合并请求](#提交合并请求)。
 
 ### 反馈 Bug
 
@@ -64,8 +57,8 @@
 * 参照如下问题尽可能多的提供信息：
     * Bug 是否能够重现？是一直出现还是偶尔出现？
     * Bug 是从什么时候开始发生的？
-    * 如果 Bug 突然发生，使用 [旧版本主题](https://github.com/theme-next/hexo-theme-next/releases) 是否能够重现 Bug？又是从哪个版本开始出现 Bug？
-    * 你所使用 Node，Hexo 以及 Next 的版本号多少？你可以运行 `node -v` 和 `hexo version` 获取版本号，或者查看文件 `package.json` 的内容。
+    * 如果 Bug 突然发生，使用 [旧版本主题](https://github.com/next-theme/hexo-theme-next/releases) 是否能够重现 Bug？又是从哪个版本开始出现 Bug？
+    * 你所使用 Node，Hexo 以及 NexT 的版本号多少？你可以运行 `node -v` 和 `hexo version` 获取版本号，或者查看文件 `package.json` 的内容。
     * 你使用了哪些插件包？查看文件 `package.json` 的内容即可获取。
 * 一步步详细你是如何重现 Bug 的，做了什么，使用了哪些功能等等。如果你需要展示代码段，请使用 [Markdown 代码块](https://help.github.com/articles/creating-and-highlighting-code-blocks/) 或 [Github 预览链接](https://help.github.com/articles/creating-a-permanent-link-to-a-code-snippet/) 或 [Gist 链接](https://gist.github.com/)。
 * 提供 Bug 的样例，如图像文件、在线演示网址等等。

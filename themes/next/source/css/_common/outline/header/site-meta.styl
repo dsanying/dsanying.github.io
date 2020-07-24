@@ -7,13 +7,19 @@
   }
 }
 
+.custom-logo-image {
+  margin-top: 20px;
+
+  +tablet-mobile() {
+    display: none;
+  }
+}
+
 .brand {
   border-bottom: none;
   color: var(--brand-color);
   display: inline-block;
-  line-height: $font-size-title;
   padding: 0 40px;
-  position: relative;
 
   &:hover {
     color: var(--brand-hover-color);
@@ -21,12 +27,10 @@
 }
 
 .site-title {
-  display: inline-block;
   font-family: $font-family-logo;
   font-size: $font-size-title;
   font-weight: normal;
-  line-height: 1.5;
-  vertical-align: top;
+  margin: 0;
 }
 
 .site-subtitle {
@@ -36,10 +40,6 @@
 }
 
 .use-motion {
-  .brand {
-    opacity: 0;
-  }
-
   .site-title, .site-subtitle, .custom-logo-image {
     opacity: 0;
     position: relative;

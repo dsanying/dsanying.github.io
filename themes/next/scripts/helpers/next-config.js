@@ -2,23 +2,22 @@
 
 'use strict';
 
-const url = require('url');
+const { parse } = require('url');
 
 /**
  * Export theme config to js
  */
 hexo.extend.helper.register('next_config', function() {
-  let { config, theme, next_version } = this;
+  const { config, theme, next_version } = this;
   config.algolia = config.algolia || {};
-  let exportConfig = {
-    hostname  : url.parse(config.url).hostname || config.url,
+  const exportConfig = {
+    hostname  : parse(config.url).hostname || config.url,
     root      : config.root,
     scheme    : theme.scheme,
     version   : next_version,
     exturl    : theme.exturl,
     sidebar   : theme.sidebar,
-    copycode  : theme.codeblock.copy_button,
-    back2top  : theme.back2top,
+    copycode  : theme.codeblock.copy_button.enable,
     bookmark  : theme.bookmark,
     fancybox  : theme.fancybox,
     mediumzoom: theme.mediumzoom,
@@ -33,12 +32,13 @@ hexo.extend.helper.register('next_config', function() {
       labels   : theme.algolia_search.labels
     },
     localsearch: theme.local_search,
-    motion     : theme.motion
+    motion     : theme.motion,
+    prism      : config.prismjs.enable && !config.prismjs.preprocess
   };
   if (config.search) {
     exportConfig.path = config.search.path;
   }
-  return `<script id="hexo-configurations">
+  return `<script class="hexo-configurations">
     var NexT = window.NexT || {};
     var CONFIG = ${JSON.stringify(exportConfig)};
   </script>`;
