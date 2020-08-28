@@ -143,4 +143,4 @@ backup:
   message: Back up dsanying's blog
   repository:
     github: git@github.com:dsanying/dsanying.github.io.git,backup
-    ecoding: git@e.coding.net:dsanying/blog.git,backup
+    ecoding: https://e.coding.net/dsanying/blog.git
