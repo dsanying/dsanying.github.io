@@ -61,7 +61,7 @@ footer:
     color: black
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
-  copyright: <a href="https://dsanying.github.io/">暗影</a>
+  copyright: <a href="https://dsanying.gitee.io/">暗影</a>
 
   # Powered by Hexo & NexT
   powered: false
@@ -241,7 +241,7 @@ read_more_btn: true
 # Post meta display settings
 post_meta:
   item_text: true
-  created_at: false
+  created_at: true
   updated_at:
     enable: true
     another_day: true
@@ -743,7 +743,7 @@ local_search:
   # Unescape html strings to the readable one.
   unescape: false
   # Preload the search data when the page loads.
-  preload: false
+  preload: true
 
 # Swiftype Search API Key
 swiftype_key:

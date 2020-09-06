@@ -1,4 +1,4 @@
-﻿# Hexo Configuration
+# Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://dsanying.github.io
+url: https://dsanying.gitee.io
 root: /
 permalink: posts/:title/
 permalink_defaults:
@@ -42,7 +42,7 @@ external_link:
 filename_case: 0
 render_drafts: false
 post_asset_folder: true
-relative_link: false
+relative_link: true
 future: true
 highlight:
   enable: true
@@ -59,7 +59,7 @@ highlight:
 index_generator:
   path: ''
   per_page: 10
-  order_by: -created
+  order_by: -date
 
 # Category & Tag
 default_category: uncategorized
@@ -100,10 +100,10 @@ theme: next
 deploy:
   - type: git
     repo:
-      github: git@github.com:dsanying/dsanying.github.io.git
+      github: git@gitee.com:dsanying/dsanying.git
       coding: git@e.coding.net:dsanying/blog.git
     branch: master
-  - type: baidu_url_submitter
+  # - type: baidu_url_submitter
 
 # hexo-hide-posts
 hide_posts:
@@ -127,12 +127,12 @@ encrypt:
 
 # hexo-tag-aplayer
 aplayer:
-  meting: true
+  meting: false
 
 # 百度推送
 baidu_url_submit:
   count: 200                 # 提交最新的多少个链接
-  host: dsanying.github.io    # 在百度站长平台中添加的域名
+  host: dsanying.gitee.io    # 在百度站长平台中添加的域名
   token: 4kU3vgf8y5pM67aQ     # 秘钥
   path: baidu_urls.txt   # 文本文档的地址， 新链接会保存在此文本文档里
 
@@ -142,5 +142,5 @@ backup:
   theme: next
   message: Back up dsanying's blog
   repository:
-    github: git@github.com:dsanying/dsanying.github.io.git,backup
-    ecoding: git@e.coding.net/dsanying/blog.git
+    github: git@gitee.com:dsanying/dsanying.gitee.io.git,backup
+    # ecoding: git@e.coding.net/dsanying/blog.git
