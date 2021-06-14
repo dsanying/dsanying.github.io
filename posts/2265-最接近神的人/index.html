@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;dsanying.gitee.io&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;right&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:true,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:&quot;changyan&quot;,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null,&quot;activeClass&quot;:&quot;changyan&quot;},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:true,&quot;preload&quot;:true}}</script>
+<meta name="description" content="input:Sophist.in   output:Sophist.out时间限制: 1000 ms  空间限制: 60000 KB 题目描述​        破解了符文之语，小 FF 开启了通往地下的道路。 当他走到最底层时， 发现正前方有一扇巨石门，   门上雕刻着一副古代人进行某种活动的图案。而石门上方用古代文写着“神的殿堂“。小FF 猜想里面应该就有王室的遗产了。但现在的问题是如何打开这扇">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2265.最接近神的人">
+<meta property="og:url" content="https://dsanying.gitee.io/posts/2265-%E6%9C%80%E6%8E%A5%E8%BF%91%E7%A5%9E%E7%9A%84%E4%BA%BA/index.html">
+<meta property="og:site_name" content="暗影博客">
+<meta property="og:description" content="input:Sophist.in   output:Sophist.out时间限制: 1000 ms  空间限制: 60000 KB 题目描述​        破解了符文之语，小 FF 开启了通往地下的道路。 当他走到最底层时， 发现正前方有一扇巨石门，   门上雕刻着一副古代人进行某种活动的图案。而石门上方用古代文写着“神的殿堂“。小FF 猜想里面应该就有王室的遗产了。但现在的问题是如何打开这扇">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-02T14:11:26.319Z">
+<meta property="article:modified_time" content="2019-08-22T12:23:26.139Z">
+<meta property="article:author" content="暗影">
+<meta property="article:tag" content="OJ">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dsanying.gitee.io/posts/2265-%E6%9C%80%E6%8E%A5%E8%BF%91%E7%A5%9E%E7%9A%84%E4%BA%BA/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;dsanying.gitee.io&#x2F;posts&#x2F;2265-%E6%9C%80%E6%8E%A5%E8%BF%91%E7%A5%9E%E7%9A%84%E4%BA%BA&#x2F;&quot;,&quot;path&quot;:&quot;posts&#x2F;2265-最接近神的人&#x2F;&quot;,&quot;title&quot;:&quot;2265.最接近神的人&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>2265.最接近神的人 | 暗影博客</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">暗影博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">暗影无际,暗夜无边</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">95</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a></li>
+        <li class="menu-item menu-item-links"><a href="/links/" rel="section"><i class="fa fa-users fa-fw"></i>友链·留言</a></li>
+        <li class="menu-item menu-item-tools"><a href="/tools/" rel="section"><i class="fa fa-briefcase fa-fw"></i>工具箱</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+<img src="https://ipcounter.ihcr.top/" alt="img">
+
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5ffedas6zm0&amp;m=7&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#input-Sophist-in-output-Sophist-out"><span class="nav-number">1.</span> <span class="nav-text">input:Sophist.in   output:Sophist.out</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-number">3.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">4.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5"><span class="nav-number">5.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA"><span class="nav-number">6.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4%E9%99%90%E5%88%B6"><span class="nav-number">7.</span> <span class="nav-text">数据范围限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">8.</span> <span class="nav-text">代码</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="暗影"
+      src="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting/avatar.jpg">
+  <p class="site-author-name" itemprop="name">暗影</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">95</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/dsanying" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;dsanying" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=KhsbEx8eEh8SGWpbWwRJRUc" title="E-Mail → http:&#x2F;&#x2F;mail.qq.com&#x2F;cgi-bin&#x2F;qm_share?t&#x3D;qm_mailme&amp;email&#x3D;KhsbEx8eEh8SGWpbWwRJRUc" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+<iframe src="https://www.lovestu.com/api/project/cnmapyinqing/obj.php" height="500" frameborder="no" border="0" width="100%"> </iframe>
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dsanying.gitee.io/posts/2265-%E6%9C%80%E6%8E%A5%E8%BF%91%E7%A5%9E%E7%9A%84%E4%BA%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting/avatar.jpg">
+      <meta itemprop="name" content="暗影">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="暗影博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2265.最接近神的人
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-05-02 22:11:26" itemprop="dateCreated datePublished" datetime="2021-05-02T22:11:26+08:00">2021-05-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2019-08-22 20:23:26" itemprop="dateModified" datetime="2019-08-22T20:23:26+08:00">2019-08-22</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JZOJ/" itemprop="url" rel="index"><span itemprop="name">JZOJ</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JZOJ/JZ%E5%88%9D%E4%B8%ADOJ/" itemprop="url" rel="index"><span itemprop="name">JZ初中OJ</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    
+      <a title="changyan" href="/posts/2265-%E6%9C%80%E6%8E%A5%E8%BF%91%E7%A5%9E%E7%9A%84%E4%BA%BA/#SOHUCS" itemprop="discussionUrl">
+        <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="posts/2265-最接近神的人/" itemprop="commentCount"></span>
+      </a>
+    
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h4 id="input-Sophist-in-output-Sophist-out"><a href="#input-Sophist-in-output-Sophist-out" class="headerlink" title="input:Sophist.in   output:Sophist.out"></a>input:<strong>Sophist.in</strong>   output:<strong>Sophist.out</strong></h4><p>时间限制: 1000 ms  空间限制: 60000 KB</p>
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>​        破解了符文之语，小 FF 开启了通往地下的道路。 当他走到最底层时， 发现正前方有一扇巨石门，   门上雕刻着一副古代人进行某种活动的图案。而石门上方用古代文写着“神的殿堂“。小FF 猜想里面应该就有王室的遗产了。但现在的问题是如何打开这扇门……<br>​       仔细研究后， 他发现门上的图案大概是说：古代人认为只有智者才是最容易接近神明的。 而最聪明的人往往通过一种仪式选拔出来。 仪式大概是指，即将隐退的智者为他的候选人写下一串无序的数字， 并让他们进行一种操作， 即交换序列中相邻的两个元素。 而用最少的交换次数使原序列变成不下降序列的人即是下一任智者。<br>​       小 FF 发现门上同样有着 n 个数字。于是他认为打开这扇门的秘诀就是找到让这个序列变成不下降序列所需要的最小次数。但小 FF 不会……只好又找到了你，并答应事成之后与你三七分……</p>
+<span id="more"></span>
+
+<h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>第一行为一个整数 n，表示序列长度<br>第二行为 n 个整数，表示序列中每个元素。</p>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>一个整数 ans，即最少操作次数</p>
+<h4 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">2 8 0 3</span><br></pre></td></tr></table></figure>
+
+<h4 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">样例说明：</span><br><span class="line">开始序列为 2 8 0 3， 目标序列为 0 2 3 8，可进行三次操作得目标序列:</span><br><span class="line">1. Swap(8, 0): 2 0 8 3</span><br><span class="line">2. Swap(2, 0): 0 2 8 3</span><br><span class="line">3. Swap(8, 3): 0 2 3 8</span><br></pre></td></tr></table></figure>
+
+<h4 id="数据范围限制"><a href="#数据范围限制" class="headerlink" title="数据范围限制"></a>数据范围限制</h4><p>对于 30%的数据 1 &lt;= n &lt;= 10^4.<br>对于 100%的数据 1 &lt;= n &lt;= 5 * 10^5;<br>-maxlongint &lt;= A[i ]&lt;= maxlongint .</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">int</span> answer=<span class="number">0</span>,a[<span class="number">5</span>*<span class="number">100005</span>],r[<span class="number">5</span>*<span class="number">100005</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">msort</span><span class="params">(<span class="keyword">int</span> s,<span class="keyword">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(s==t) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> mid=(s+t)/<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">msort</span>(s,mid);</span><br><span class="line">    <span class="built_in">msort</span>(mid+<span class="number">1</span>,t);</span><br><span class="line">    <span class="keyword">int</span> i=s,j=mid+<span class="number">1</span>,k=s;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid &amp;&amp; j&lt;=t)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[i]&lt;=a[j])</span><br><span class="line">        &#123;</span><br><span class="line">            r[k]=a[i];k++;i++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            r[k]=a[j];k++;j++;</span><br><span class="line">            answer+=mid-i+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;=mid)</span><br><span class="line">    &#123;</span><br><span class="line">        r[k]=a[i];k++;i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(j&lt;=t)</span><br><span class="line">    &#123;</span><br><span class="line">        r[k]=a[j];k++;j++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=s;i&lt;=t;i++) a[i]=r[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;Sophist.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;Sophist.out&quot;</span>,<span class="string">&quot;w&quot;</span>,stdout);</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    cin&gt;&gt;a[i];</span><br><span class="line">    <span class="built_in">msort</span>(<span class="number">1</span>,n);</span><br><span class="line">    cout&lt;&lt;answer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\1035-粉刷匠\" rel="bookmark">1035.粉刷匠</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\1036-迷路\" rel="bookmark">1036.迷路</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\1038-游戏\" rel="bookmark">1038.游戏</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\1039-windy数\" rel="bookmark">1039.windy数</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\1087-约数和1\" rel="bookmark">1087.约数和1</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="暗影 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>暗影
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://dsanying.gitee.io/posts/2265-%E6%9C%80%E6%8E%A5%E8%BF%91%E7%A5%9E%E7%9A%84%E4%BA%BA/" title="2265.最接近神的人">https://dsanying.gitee.io/posts/2265-最接近神的人/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/OJ/" rel="tag"><i class="fa fa-tag"></i> OJ</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/2127-%E7%94%B5%E5%AD%90%E8%A1%A8%E6%A0%BC/" rel="prev" title="2127.电子表格">
+                  <i class="fa fa-chevron-left"></i> 2127.电子表格
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/2266-%E5%8F%A4%E4%BB%A3%E4%BA%BA%E7%9A%84%E9%9A%BE%E9%A2%98/" rel="next" title="2266.古代人的难题">
+                  2266.古代人的难题 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS"></div><script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><a href="https://dsanying.gitee.io/">暗影</a></span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{&quot;enable&quot;:true,&quot;theme&quot;:&quot;default&quot;,&quot;js&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;mermaid@8.9.3&#x2F;dist&#x2F;mermaid.min.js&quot;}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{&quot;enable&quot;:true,&quot;tags&quot;:&quot;none&quot;,&quot;js&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;mathjax@3.1.4&#x2F;es5&#x2F;tex-mml-chtml.js&quot;}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="changyan" type="application/json">{&quot;enable&quot;:true,&quot;appid&quot;:&quot;cyvgWVzbG&quot;,&quot;appkey&quot;:&quot;ef049b2a6c00d183fac694533df731df&quot;}</script>
+<script src="/js/third-party/comments/changyan.js"></script>
+
+</body>
+</html>
