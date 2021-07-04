@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
 
-<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;dsanying.gitee.io&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;right&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:true,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:&quot;changyan&quot;,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null,&quot;activeClass&quot;:&quot;changyan&quot;},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:true,&quot;preload&quot;:true}}</script>
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;dsanying.gitee.io&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;right&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:true,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:true,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:&quot;changyan&quot;,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null,&quot;activeClass&quot;:&quot;changyan&quot;},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:true,&quot;preload&quot;:true}}</script>
 <meta name="description" content="前言我们知道，使用 Github+HEXO 搭建个人博客需要花不少时间。 如果有一天我们电脑突然坏了，或者换了系统，那么我们怎么使用 HEXO 再发布文章到个人博客呢？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="换了环境如何继续使用HEXO写博客">
@@ -315,7 +316,7 @@
 
 <h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><h4 id="一、安装软件"><a href="#一、安装软件" class="headerlink" title="一、安装软件"></a>一、安装软件</h4><p>==&gt;<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a></p>
 <p>==&gt;<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Git</a></p>
-<h4 id="二、在-Github-官网添加新密钥"><a href="#二、在-Github-官网添加新密钥" class="headerlink" title="二、在 Github 官网添加新密钥"></a>二、在 Github 官网添加新密钥</h4><p>在Git中输入：ssh-keygen -t rsa -C “<a href="mailto:&#x79;&#111;&#117;&#114;&#101;&#x6d;&#97;&#x69;&#x6c;&#64;&#x65;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#99;&#111;&#109;">&#x79;&#111;&#117;&#114;&#101;&#x6d;&#97;&#x69;&#x6c;&#64;&#x65;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#99;&#111;&#109;</a>“</p>
+<h4 id="二、在-Github-官网添加新密钥"><a href="#二、在-Github-官网添加新密钥" class="headerlink" title="二、在 Github 官网添加新密钥"></a>二、在 Github 官网添加新密钥</h4><p>在Git中输入：ssh-keygen -t rsa -C “<a href="mailto:&#121;&#x6f;&#x75;&#x72;&#x65;&#109;&#97;&#x69;&#108;&#x40;&#101;&#x78;&#97;&#109;&#112;&#108;&#x65;&#46;&#x63;&#111;&#109;">&#121;&#x6f;&#x75;&#x72;&#x65;&#109;&#97;&#x69;&#108;&#x40;&#101;&#x78;&#97;&#109;&#112;&#108;&#x65;&#46;&#x63;&#111;&#109;</a>“</p>
 <p>打开C:\Users\Administrator\.ssh中的id_rsa.pub</p>
 <p>复制密钥，在<a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a>中新建SSH key</p>
 <h4 id="三、源文件拷贝"><a href="#三、源文件拷贝" class="headerlink" title="三、源文件拷贝"></a>三、源文件拷贝</h4><p>将原来电脑上博客目录下必要文件拷到你的新电脑文件夹中，必须拷贝一下几个目录：</p>
@@ -350,10 +351,10 @@
       <div class="popular-posts-title"><a href="\posts\hexo-blog-encrypt\" rel="bookmark">hexo-blog-encrypt</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\hexo-tag-aplayer\" rel="bookmark">hexo-tag-aplayer</a></div>
+      <div class="popular-posts-title"><a href="\posts\hexo-hide-posts\" rel="bookmark">hexo-hide-posts</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\hexo-hide-posts\" rel="bookmark">hexo-hide-posts</a></div>
+      <div class="popular-posts-title"><a href="\posts\hexo-tag-aplayer\" rel="bookmark">hexo-tag-aplayer</a></div>
     </li>
   </ul>
 
@@ -457,6 +458,8 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
