@@ -16,9 +16,13 @@ toc: true
       link: https://www.ypojie.com/
       avatar: https://www.ypojie.com/favicon.ico 
       descr: 给你所需要的内容！
+    - name: 异次元
+      link: https://www.iplaysoft.com/
+      avatar: https://www.iplaysoft.com/favicon.ico
+      descr: 软件世界
     - name: 小森林导航
       link: https://www.xsldh.vip/
-      avatar: https://www.xsldh.vip/theme/avatar/logo3.jpg
+      avatar: https://www.xsldh.vip/theme/img/logo3.jpg
       descr: 娱乐网址大全
     - name: Jsons
       link: http://www.jsons.cn/
@@ -31,9 +35,13 @@ toc: true
 - class_name:
   class_desc: 
   link_list:
+    - name: 智影
+      link: https://zenvideo.qq.com/home
+      avatar: https://material.gtimg.com/grail/dist/favicon.ico
+      descr: 在线智能视频创作平台
     - name: 图说
       link: https://tushuo.baidu.com/
-      avatar: https://tushuo.baidu.com/homepage/asset/avatar/echarts-logo.png
+      avatar: https://tushuo.baidu.com/homepage/asset/img/echarts-logo.png
       descr: 图表制作
     - name: 速写板
       link: https://www.suxieban.com/
@@ -90,6 +98,20 @@ toc: true
       avatar: https://trace.moe/favicon128.png
       descr: 动漫片段识别
 {% endflink %}
+# 文件
+{% flink %}
+- class_name:
+  class_desc: 
+  link_list:
+    - name: ALL TO ALL
+      link: https://www.alltoall.net/
+      avatar: https://ccdn.goodq.top/caches/2bf25eeab1dd9ac68280087e9f26d920/aHR0cHM6Ly93d3cuYWxsdG9hbGwubmV0L3FmeS1jb250ZW50L3VwbG9hZHMvMjAxNi8wNi9mMjJlNjEzMGY2ZTJlZmM0YjIzYzBjMjc0MjNiMDM1OS5qcGc_p_p100_p_3D.jpg
+      descr: 在线格式转换
+    - name: LightPDF
+      link: https://lightpdf.com/zh/
+      avatar: https://qncdn.aoscdn.com/local/lightpdf.com/img/favicon.png
+      descr: 在线PDF编辑器及转换器
+{% endflink %}
 # 游戏
 {% flink %}
 - class_name:
@@ -109,7 +131,7 @@ toc: true
       descr: 游戏集合
     - name: A Dark Room(小黑屋)
       link: http://lab.mkblog.cn/adarkroom/
-      avatar: lab.mkblog.cn/adarkroom/favicon.ico
+      avatar: http://lab.mkblog.cn/adarkroom/favicon.ico
       descr: 纯文字冒险游戏
     - name: 超苦逼冒险者
       link: http://kubitionadvanture.sinaapp.com/
@@ -129,9 +151,8 @@ toc: true
       link: https://chrome.zzzmh.cn/
       avatar: https://chrome.zzzmh.cn/favicon.ico 
       descr: 浏览器插件下载
-    - name: ACONVERT
-      link: https://www.aconvert.com/
-      avatar: https://www.aconvert.com/favicon.ico 
-      descr: 格式转换
-  
+    - name: TTS
+      link: http://nopapp.com/App/TTS
+      avatar: http://nopapp.com/favicon.ico
+      descr: 文字转语音
 {% endflink %}

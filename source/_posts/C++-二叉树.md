@@ -4,7 +4,6 @@ categories:
   - "教程"
 tags:
   - C++
-  - Algorithm
 ---
 
 二叉树遍历：前序遍历、中序遍历、后序遍历、层序遍历

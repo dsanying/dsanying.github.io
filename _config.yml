@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://dsanying.gitee.io/
+url: https://dsanying.github.io/
 permalink: posts/:title/
 permalink_defaults:
 pretty_urls:
@@ -106,7 +106,8 @@ deploy:
     repo: git@gitee.com:dsanying/dsanying.git
   - type: git
     repo: git@github.com:dsanying/dsanying.github.io.git
-  - type: baidu_url_submitter
+  - type: cjh_bing_url_submitter
+  - type: cjh_baidu_url_submitter
 
 # KateX
 markdown:
@@ -116,17 +117,29 @@ markdown:
       options:
         strict: false
 
-# hexo-baidu-url-submit
-baidu_url_submit:
-  count: 1000 ## 提交最新的一个链接
-  host: https://dsanying.gitee.io ## 在百度站长平台中注册的域名
-  token: diWTXtKP8m2e4YUQ ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
-  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
-  
 # hexo-git-backup
 backup:
-    type: git
-    theme: butterfly
-    repository:
-       github: git@github.com:dsanying/dsanying.github.io.git,backup
-       gitee: git@gitee.com:dsanying/dsanying.git,backup
+  type: git
+  theme: butterfly
+  repository:
+    github: git@github.com:dsanying/dsanying.github.io.git,backup
+    gitee: git@gitee.com:dsanying/dsanying.git,backup
+       
+hexo_submit_urls_to_search_engine:
+  submit_condition: count # Submitted condition, optional value: count | period, Now only supports count
+  count: 1000 # Submit the latest links
+  period: 900 # Submit a link with a modification time of 900 seconds
+  google: 0 #  Whether to submit to Google, optional values: 1 | 0 (0: No; 1: Yes)
+  bing: 1 #  Whether to submit to bing, optional value: 1 | 0 (0: no; 1: yes)
+  baidu: 1 # Whether to submit to baidu, optional value: 1 | 0 (0: no; 1: yes)
+  txt_path: submit_urls.txt ## The address of the text document, the link to be pushed will be saved in this text document
+  baidu_host: https://dsanying.github.io ## Domain name registered in Baidu webmaster platform
+  baidu_token: diWTXtKP8m2e4YUQ ## Please note that this is your secret key, so do not publish the website source code in the public repository!
+  bing_host: https://dsanying.github.io ## Domain name registered in Bing webmaster platform
+  bing_token: 9c6f3c8bc8a34e3b9682acfe10fb4a10 ## Please note that this is your secret key, so do not publish the website source code in the public repository!
+  google_host: https://cjh0613.github.io ## Domain name registered in Google webmaster platform
+  google_key_file: Project.json # Store the json file of the google key in the root directory of the website (same location as the hexo _config.yml file), please do not publish the source code of the website in the public warehouse!
+  google_proxy: 0 # Set the proxy used to submit urls to Google
+  replace: 0  # Whether to replace some substrings in links, optional value: 1 | 0 (0: no; 1: yes)
+  find_what: http://cjh0613.github.io/blog
+  replace_with: https://cjh0613.com
