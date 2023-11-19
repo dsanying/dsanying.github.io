@@ -1,0 +1,415 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start --><script>
+  ;(function () {
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then((result) => {
+          // 判断是否安装了sw
+          if (localStorage.getItem('installSW')) return
+          localStorage.setItem('installSW', true)
+          // 这里就不用清理setInterval了，因为页面刷新后就没有了
+          const timer = setInterval(() => {
+            // 判断sw安装后，是否处于激活状态，激活后刷新页面
+            if (result.active.state === 'activated') {
+              clearInterval(timer)
+              fetch(window.location.href)
+                .then((res) => res.text())
+                .then((text) => {
+                  document.open()
+                  document.write(text)
+                  document.close()
+                })
+            }
+          }, 100)
+        })
+        .catch(console.log)
+    }
+  })()
+  </script><!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>暗影小站 - 暗影の个人小站</title><meta name="author" content="暗影"><meta name="copyright" content="暗影"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="暗影小站">
+<meta property="og:url" content="http://dsanying.gitee.io/page/7/index.html">
+<meta property="og:site_name" content="暗影小站">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting/avatar.jpg">
+<meta property="article:author" content="暗影">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://dsanying.gitee.io/page/7/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="codeva-fkDIgu4Hj6"/><meta name="msvalidate.01" content="394CFA1E21959CC3AF8C3B1E67448E75"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c55caa246823a133809ec2fd57dfaed9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 暗影","link":"链接: ","source":"来源: 暗影小站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '暗影小站',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-11-19 14:22:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/resource/"><i class="fa-fw fas fa-toolbox"></i><span> 资源站</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/dsanying/ImgHosting@blog/background.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="暗影小站"><span class="site-name">暗影小站</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/resource/"><i class="fa-fw fas fa-toolbox"></i><span> 资源站</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">暗影小站</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/dsanying" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:119548583@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/posts/1537-pot/" title="1537.pot"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting@blog/03.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1537.pot"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1537-pot/" title="1537.pot">1537.pot</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-02-13T08:28:09.000Z" title="更新于 2022-02-13 16:28:09">2022-02-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/JZOJ/">JZOJ</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JZOJ/JZ%E9%AB%98%E4%B8%ADOJ/">JZ高中OJ</a></span></div><div class="content">Time Limits: 1000 ms  Memory Limits: 65536 KB
+Description
+这个假期，小h在自家院子里种了许多花，它们围成了一个圈，从1…n编号（n&lt;=100000），小h 对每盆花都有一个喜好值xi,（-1000&lt;=xi&lt;=1000）,小h现在觉得这样一成不变很枯燥，于是他做了m(m&lt;=100000)个改动，每次把第ki盘花改成喜好值为di的花，然后小h要你告诉他，在这个花圈中，连续的最大喜好值是多少。
+Input
+第一行，n，花盆的数量
+第二行，n个数，表示对于每盆花的喜好值。
+第三行：m, 改动的次数
+以下m行，每行两个数ki 和di 。
+Output
+M行，每一行对应一个更改，表示连续的最大喜好值，且不能整圈都选。（注意：是在圈上找）
+Sample Input
+123456753 -2 1 2 -542 -25 -52 -45 -1
+Sample Output
+12344435
+Data Constraint
+Code
+123456789101112131415161718192021222324252627282 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/1536-seek/" title="1536.seek"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting@blog/04.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1536.seek"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1536-seek/" title="1536.seek">1536.seek</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-02-13T08:28:09.000Z" title="更新于 2022-02-13 16:28:09">2022-02-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/JZOJ/">JZOJ</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JZOJ/JZ%E9%AB%98%E4%B8%ADOJ/">JZ高中OJ</a></span></div><div class="content">Time Limits: 1000 ms  Memory Limits: 65536 KB
+Description
+俗话说“好命不如好名”，小h准备给他的宠物狗起个新的名字，于是他把一些英文的名字全抄下来了，写成一行长长的字符串，小h觉得一个名字如果是好名字，那么这个名字在这个串中既是前缀，又是后缀，即是这个名字从前面开始可以匹配，从后面开始也可以匹配，例如abc在 abcddabc中既是前缀，也是后缀，而ab就不是，可是长达4*10^5的字符让小h几乎昏过去了，为了给自己的小狗起个好名字，小h向你求救，并且他要求要将所有的好名字的长度都输出来。
+Input
+一行，要处理的字符串（都是小写字母）。
+Output
+一行若干个数字，从小到大输出，表示好名字的长度。
+Sample Input
+1abcddabc
+Sample Output
+13 8
+Data Constraint
+Code
+123456789101112131415161718192021#include &lt;stdio.h&gt;const int max=4e5+1;char s[max];int next[max] ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/1534-rank/" title="1534.rank"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting@blog/04.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1534.rank"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1534-rank/" title="1534.rank">1534.rank</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-02-13T08:28:09.000Z" title="更新于 2022-02-13 16:28:09">2022-02-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/JZOJ/">JZOJ</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JZOJ/JZ%E9%AB%98%E4%B8%ADOJ/">JZ高中OJ</a></span></div><div class="content">Time Limits: 2000 ms  Memory Limits: 65536 KB
+Description
+小h和小R正在看之前的期末&amp;三校联考成绩，小R看完成绩之后很伤心，共有n（n&lt;=5*10^6）个学生，第i个学生有一个总成绩Xi(0&lt;=Xi&lt;=10^5),因为他的排名是倒数第k（1&lt;=k&lt;=n）个,于是小R想知道那些成绩比他低（包括成绩和他一样）的同学的成绩，这样能让他没那么伤心。
+Input
+第一行，n和k,表示有n个学生，小R排倒数第k.
+第二行，n个非负整数，表示这n个学生的成绩。
+Output
+一行，共k个数，从小到大输出。（相同成绩按不同排名算）
+Sample Input
+125 31 1 2 2 3
+Sample Output
+11 1 2
+Data Constraint
+Code
+123456789101112131415161718#include&lt;stdio.h&gt;const int max=1e5+1;int a[max],n,k,temp;int main()&#123;	scanf(&quot;%d ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/1437-%E6%9C%80%E5%B0%8F%E4%B8%8E%E6%9C%80%E5%A4%A7/" title="1437.最小与最大"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting@blog/05.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1437.最小与最大"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1437-%E6%9C%80%E5%B0%8F%E4%B8%8E%E6%9C%80%E5%A4%A7/" title="1437.最小与最大">1437.最小与最大</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-02-13T08:28:09.000Z" title="更新于 2022-02-13 16:28:09">2022-02-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/JZOJ/">JZOJ</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JZOJ/JZ%E5%88%9D%E4%B8%ADOJ/">JZ初中OJ</a></span></div><div class="content">input:minmax.in   output:minmax.out
+时间限制: 1000 ms  空间限制: 60000 KB
+题目描述
+做过了乘积最大这道题，相信这道题也难不倒你。 已知一个数串，可以在适当的位置加入乘号（设加了k个，当然也可不加，即分成k+1个部分），设这k+1个部分的乘积（如果k=0,则乘积即为原数串的值）对m 的余数（即mod m）为x; 现求x能达到的最小值及该情况下k的最小值，以及x能达到的最大值及该情况下的k的最小值（可以存在x的最小值与最大值相同的情况）。
+以下是｛原题：符文之语｝另一种题目描述，题意相同：
+｛         当小 FF 来到神庙时，神庙已经破败不堪了。 但神庙的中央有一个光亮如新的石台。小 FF 走近石台，发现石台上有一个数串，而数串的上方刻着一串古老的符文之语。精通古符文之语的小 FF 不费吹灰之力就读懂了文章的意思， 其大意是:
+对于石台上的一串数字，你可以在适当的位置加入乘号（设加了 k 个，当然也可不加， 即分成 k+1 个部分），设这 k+1 个部分的乘积（如果 k=0,则乘积即为原数串的值）对 m 的余数（即 mod  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/1433-%E6%95%B0%E7%A0%81%E9%97%AE%E9%A2%98/" title="1433.数码问题"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting@blog/05.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1433.数码问题"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1433-%E6%95%B0%E7%A0%81%E9%97%AE%E9%A2%98/" title="1433.数码问题">1433.数码问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-02-13T08:28:09.000Z" title="更新于 2022-02-13 16:28:09">2022-02-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/JZOJ/">JZOJ</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JZOJ/JZ%E9%AB%98%E4%B8%ADOJ/">JZ高中OJ</a></span></div><div class="content">Time Limits: 1000 ms  Memory Limits: 65536 KB
+Description
+Alice有一个N*N的格子，把1-N^2按照从上到下从左到右的顺序填进表格中，允许在表格上进行两种操作：
+　　(1)	旋转行——这一行的数向右移动一个位置，而最后一列的数会移到第一列；
+　　(2)	旋转列——这一列的数向下移动一个位置，最后一行的数会移到第一行。
+　　Alice想把数X移到（R,C）处可以采用以下方法：
+　　•如果X不在C这一列，通过旋转行操作把X移到C这一列；
+　　•如果X不在R这一行，通过旋转列操作把X移到R这一行。
+　　下面是一个把6移到（3，4）的例子：
+　　![img](data:image/JPG;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIy ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/1432-%E8%BE%93%E6%B2%B9%E7%AE%A1%E9%81%93/" title="1432.输油管道"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting@blog/04.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1432.输油管道"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1432-%E8%BE%93%E6%B2%B9%E7%AE%A1%E9%81%93/" title="1432.输油管道">1432.输油管道</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-02-13T08:28:09.000Z" title="更新于 2022-02-13 16:28:09">2022-02-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/JZOJ/">JZOJ</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JZOJ/JZ%E9%AB%98%E4%B8%ADOJ/">JZ高中OJ</a></span></div><div class="content">Time Limits: 1000 ms  Memory Limits: 65536 KB
+Description
+请你帮忙设计一个从城市M到城市Z的输油管道，现在已经把整个区域划分为R行C列，每个单元格可能是空的也可能是以下7种基本管道之一：
+　　![img](data:image/JPG;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCABkApYDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwR ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/1420-%E4%BD%B3%E8%82%B4/" title="1420.佳肴"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting@blog/04.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1420.佳肴"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1420-%E4%BD%B3%E8%82%B4/" title="1420.佳肴">1420.佳肴</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-02-13T08:28:09.000Z" title="更新于 2022-02-13 16:28:09">2022-02-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/JZOJ/">JZOJ</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JZOJ/JZ%E9%AB%98%E4%B8%ADOJ/">JZ高中OJ</a></span></div><div class="content">Time Limits: 1000 ms  Memory Limits: 65536 KB
+Description
+佳肴就是非常美味的菜的意思，佳肴最关键的是选择好原料。
+　　现在有N种原料，每种原料都有酸度S和苦度B两个属性，当选择多种原料时，总酸度为每种原料的酸度之积，总苦度为每种原料的苦度之和。
+　　正如大家所知，佳肴是既不酸也不苦的，因为要保证所选的原料使得总酸度和总苦度差的绝对值最小。
+　　由于佳肴不能只有水，所以必须至少选择一种佳肴。
+Input
+输入第一行包含一个整数N（1&lt;=N&lt;=10），表示原料的种数。
+　　接下来N行每行包含两个用一个空格隔开的整数，分别表示酸度和苦度。
+　　输入数据保证如果所有原料都选上，总酸度和总苦度不会超过10^9。
+Output
+输出总酸度和总苦度最小的差。
+Sample Input
+123456789101112131415输入1：13 10输入2：23 85 8输入3：41 72 63 84 9
+Sample Output
+12345678输出1：7输出2：1输出3：1
+Data Constraint
+Hint
+【样例解释】
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/1388-%E8%87%AA%E8%A1%8C%E8%BD%A6%E8%B5%9B/" title="1388.自行车赛"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting@blog/05.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1388.自行车赛"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1388-%E8%87%AA%E8%A1%8C%E8%BD%A6%E8%B5%9B/" title="1388.自行车赛">1388.自行车赛</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-02-13T08:28:09.000Z" title="更新于 2022-02-13 16:28:09">2022-02-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/JZOJ/">JZOJ</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JZOJ/JZ%E9%AB%98%E4%B8%ADOJ/">JZ高中OJ</a></span></div><div class="content">Time Limits: 1000 ms  Memory Limits: 65536 KB
+Description
+翠亨村举行一场自行车赛，翠亨村有N个路口（编号1到N），另有M条双向边连接起来。下面有几个定义：
+　　•路径：由一系列边组成，满足后一条边的起点为前一条边的终点；
+　　•简单路径：每个路口最多经过一次的路径；
+　　•环：起点和终点在同一个路口的简单路径。
+　　保证每对路口之间至少有一条路径相连，除此之外还满足每条边最多只会出现在一个环中。
+　　你的任务是找出最长的满足以下两个条件的路径：
+　　•起点可以在任意路口，但终点必须在1号路口；
+　　•路径可能多次经过同一个路口，但每条边最多只会经过一次。
+Input
+第一行包含两个整数N和M(2&lt;=N&lt;=10000,1&lt;=M&lt;=2N-2)，表示路口数量和边的数量。
+　　接下来M行，每行包含两个不同的整数A和B(1&lt;=A,B&lt;=N)，表示A和B之间存在一条边直接相连，两个路口之间最多只有一条边直接相连。
+Output
+输出最长的比赛路径的长度。
+Sample Input
+123456789101 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/1386-%E6%8E%92%E5%BA%8F/" title="1386.排序"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting@blog/02.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1386.排序"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1386-%E6%8E%92%E5%BA%8F/" title="1386.排序">1386.排序</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-02-13T08:28:09.000Z" title="更新于 2022-02-13 16:28:09">2022-02-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/JZOJ/">JZOJ</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JZOJ/JZ%E9%AB%98%E4%B8%ADOJ/">JZ高中OJ</a></span></div><div class="content">Time Limits: 1000 ms  Memory Limits: 65536 KB
+Description
+你收到一项对数组进行排序的任务，数组中是1到N个一个排列。你突然想出以下一种特别的排序方法，分为以下N个阶段：
+　　•阶段1，把数字1通过每次交换相邻两个数移到位置1；
+　　•阶段2，用同样的方法把N移到位置N；
+　　•阶段3，把数字2移到位置2处；
+　　•阶段4，把数字N-1移到位置N-1处；
+　　•依此类推。
+　　换句话说，如果当前阶段为奇数，则把最小的未操作的数移到正确位置上，如果阶段为偶数，则把最大的未操作的数移到正确位置上。
+　　写一个程序，给出初始的排列情况，计算每一阶段交换的次数。
+Input
+第一行包含一个整数N(1&lt;=N&lt;=100000)，表示数组中元素的个数。
+　　接下来N行每行一个整数描述初始的排列情况。
+Output
+输出每一阶段的交换次数。
+Sample Input
+123456789101112131415161718192021222324输入1：3213输入2：554321输出3：75437126
+Sample Output
+1 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/1385-%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2/" title="1385.直角三角形"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting@blog/02.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="1385.直角三角形"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/1385-%E7%9B%B4%E8%A7%92%E4%B8%89%E8%A7%92%E5%BD%A2/" title="1385.直角三角形">1385.直角三角形</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time datetime="2022-02-13T08:28:08.000Z" title="更新于 2022-02-13 16:28:08">2022-02-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/JZOJ/">JZOJ</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/JZOJ/JZ%E9%AB%98%E4%B8%ADOJ/">JZ高中OJ</a></span></div><div class="content">Time Limits: 4000 ms  Memory Limits: 65536 KB
+Description
+二维平面坐标系中有N个点。
+从N个点选择3个点，问有多少选法使得这3个点形成直角三角形。
+Input
+第一行包含一个整数N(3&lt;=N&lt;=1500)，表示点数。
+接下来N行，每行包含两个用空格隔开的整数表示每个点的坐标，坐标值在-10^9到10^9之间。
+每个点位置互不相同。
+Output
+输出直角三角形的数量。
+Sample Input
+1234567891011121314151617181920输入1：34 22 11 3输入2：45 02 68 65 7输入3：5-1 1-1 00 01 01 1
+Sample Output
+12345678输出1：1输出2：0输出3：7
+Code
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/6/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/#content-inner">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/#content-inner">8</a><a class="page-number" href="/page/9/#content-inner">9</a><a class="extend next" rel="next" href="/page/8/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/dsanying/ImgHosting/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">暗影</div><div class="author-info__description">暗影无际,暗夜无边</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">88</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/dsanying"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/dsanying" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:119548583@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">88</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2019-12-31T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-11-19T06:22:03.760Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/dsanying/ImgHosting@blog/background.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 暗影</div><div class="footer_custom_text">暗影无际,暗夜无边</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = []
+        sub.unshift(data.hitokoto, from)
+        typedJSFn.init(sub)
+      } else {
+        document.getElementById('subtitle').textContent = data.hitokoto
+      }
+    })
+}
+typedJSFn.run(subtitleType)
+</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addModeChange('mermaid', runMermaid)
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
